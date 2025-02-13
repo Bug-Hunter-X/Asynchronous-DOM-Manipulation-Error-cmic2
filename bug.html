@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be replaced.
+  </div>
+
+  <script>
+    //Attempting to access an element that doesn't exist yet due to asynchronous loading.
+    document.getElementById("myDiv").innerHTML = "This is the new text.";
+    // The issue lies here.  The script runs *before* the element 'myDiv' is fully loaded into the DOM
+  </script>
+</body>
+</html>
